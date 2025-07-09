@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get data DOM</title>
+    <link rel="icon" href="./assets/images/page-icon.ico">
+    <!-- Bulma Framework -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <!-- Font Awesome para iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <section class="hero is-primary">
+        <div class="hero-body">
+            <div class="container">
+                <h1 class="title has-text-centered has-text-white">Users and birthdays</h1>
+            </div>
+        </div>
+    </section>
+    <!-- Main Content -->
+    <section class="section">
+        <div class="container">
+            <div class="columns is-centered">
+                <div class="column is-8">
+                    <!-- Form -->
+                    <div class="box">
+                        <h2 class="title is-4 has-text-centered">Enter your data</h2>                    
+                        <form id="userForm">
+                            <!-- Name input with validation -->
+                            <div class="field">
+                                <label class="label" for="userName">Full name</label>
+                                <div class="control has-icons-left">
+                                    <input class="input" type="text" id="userName" name="userName" 
+                                    placeholder="Name and last name" required>
+                                    <span class="icon is-small is-left">
+                                        <i class="fas fa-user"></i>
+                                    </span>
+                                </div>
+                            </div>
+                            <!-- Age input with validation -->
+                            <div class="field">
+                                <label class="label" for="userAge">Your age</label>
+                                <div class="control has-icons-left">
+                                    <input class="input" type="number" id="userAge" name="userAge" 
+                                    placeholder="Age" min="1" max="120" required>
+                                    <span class="icon is-small is-left">
+                                        <i class="fas fa-birthday-cake"></i>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="field is-grouped">
+                                <div class="control">
+                                    <button type="button" id="saveButton" class="button is-success is-medium">
+                                        <span class="icon">
+                                            <i class="fas fa-save"></i>
+                                        </span>
+                                        <span>Save</span>
+                                    </button>
+                                </div>
+                                <div class="control">
+                                    <button type="button" id="clearButton" class="button is-danger is-medium">
+                                        <span class="icon">
+                                            <i class="fas fa-trash"></i>
+                                        </span>
+                                        <span>Clear</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- Mensajes de retroalimentación -->
+                    <div id="errorMessage" class="message is-danger" style="display: none;">
+                        <div class="message-body">
+                            <span class="icon">
+                                <i class="fas fa-exclamation-triangle"></i>
+                            </span>
+                            <span id="errorText"></span>
+                        </div>
+                    </div>
+                    
+                    <div id="successMessage" class="message is-success" style="display: none;">
+                        <div class="message-body">
+                            <span class="icon">
+                                <i class="fas fa-check-circle"></i>
+                            </span>
+                            <span id="successText"></span>
+                        </div>
+                    </div>
+                    <!-- Stored Data -->
+                    <div class="box">
+                        <h3 class="title is-4"><i class="fas fa-database"></i> Users stored</h3>
+                        <div id="output"></div>
+                    </div>
+                    <!-- Interactions counter -->
+                    <div class="counter-box">
+                        <h3 class="title is-4 has-text-white">
+                            <i class="fas fa-chart-line"></i> Interactions counter</h3>
+                        <div class="counter-number" id="interactionCounter">0</div>
+                        <p class="has-text-white"> Number of times you have interacted</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="content has-text-centered">
+            <p>&copy Mariana Restrepo - 2025</p>
+        </div>
+    </footer>
+    <script src="./assets/js/script.js" type="module"></script>
+</body>
+</html> 
